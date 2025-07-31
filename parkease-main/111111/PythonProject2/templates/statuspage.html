@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+            @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+            @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+            body {
+                margin: 0;
+                font-family: Montserrat, sans-serif;
+                background-color: black;
+            }
+
+            td,th {
+                border-bottom: 0.5px solid #fff;
+            }
+
+            .topnav {
+                overflow: hidden;
+                background-color: #f4b41e;
+                margin-top: 0px;
+            }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 20px;
+                padding-left:45px;
+                letter-spacing: 5px;
+                font-size:18px;
+                line-height: 2.42857143;
+                font-family: Montserrat, sans-serif;
+            }
+
+            .avail {
+                border: 2px solid white;
+                width: 490px;
+                padding: 30px;
+                margin: 20px;
+                text-align: center;
+                font-size: 34px;
+            }
+
+            .topnav a.active {
+                color: white;
+            }
+
+            .center{
+                margin-left:auto;
+                margin-right:auto;
+                align:center;
+            }
+
+            footer {
+                text-align: center;
+                padding: 6px;
+                background-color: #f4b41e;
+                color: white;
+                font-size: 14px;
+                margin-bottom:0px;
+                bottom:0px;
+            }
+
+            input[type=text] {
+                position: relative;
+                width: 80%;
+                background: black;
+                color: #333;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                margin: 8px 0;
+                font-size: 16px;
+                letter-spacing: 1px;
+                font-weight: 300;
+                border-bottom: 1px solid #f4b41e;
+                font-family: Montserrat, sans-serif;
+            }
+
+            input[type='submit'] {
+                background: #f4b41e;
+                color: black;
+                cursor: pointer;
+                padding: 8px;
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                border:none;
+                font-family: Montserrat, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="website_trial2.php" style="font-family: Montserrat, sans-serif;">parkeasy</a>
+        </div>
+        <br>
+        <div class="container" style="width:500px; font-size:150%; color:#f4b41e; font-family:Montserrat, sans-serif;">
+            <div class="avail" style="color:#f4b41e;">
+                Available Parking Space:
+                <b style="color:#fff;">
+                    <!-- Replace this placeholder with PHP value for available spaces -->
+                    80
+                </b>
+            </div>
+            <br>
+            Welcome
+            <b style="color:#fff;">
+                <!-- Replace this placeholder with PHP value for username -->
+                Prashanth
+            </b>
+            <br>
+            Your license plate number is
+            <b style="color:#fff;">
+                <!-- Replace this placeholder with PHP value for license plate -->
+                HP03MF4477
+            </b>
+            <br>
+            <br>
+            HISTORY:
+            <br>
+            <br>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr style="color:#fff;font-size:90%; font-family:Montserrat, sans-serif;">
+                        <th>Entry time</th>
+                        <th>Exit time</th>
+                        <th>Time Spent</th>
+                    </tr>
+                    <!-- Loop through entry and exit data -->
+                    <tr style="color:#f4b41e; font-family:Montserrat, sans-serif; font-size:95%;">
+                        <td>2025-02-01 12:00:00</td>
+                        <td>2025-02-01 14:00:00</td>
+                        <td style="text-align:center;">120 minutes</td>
+                    </tr>
+                    <!-- Add more rows as necessary -->
+                </table>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="container" style="width:500px; font-size:150%; color:#f4b41e; font-family:Montserrat, sans-serif;">
+            TRANSACTION DETAILS:
+            <br>
+            <br>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr style="color:#fff;font-size:90%; font-family:Montserrat, sans-serif;">
+                        <th>Date of payment</th>
+                        <th>Price</th>
+                    </tr>
+                    <!-- Loop through transaction data -->
+                    <tr style="color:#f4b41e; font-family:Montserrat, sans-serif; font-size:95%;">
+                        <td>2025-02-01</td>
+                        <td>240</td>
+                    </tr>
+                    <!-- Add more rows as necessary -->
+                </table>
+            </div>
+            <br>
+            <br>
+            <p style="font-size:100%;">
+                ADD MONEY TO YOUR PARKEASY WALLET :
+            </p>
+            <h4 style="color:#fff;">
+                Your available balance is :
+                <!-- Replace this placeholder with PHP value for balance -->
+                100
+            </h4>
+            <form action="update_balance.php" method="POST">
+                <br>
+                <input type="text" placeholder="Enter your balance" name="updated_value" >
+                <input type="hidden" name="customer_nump" value="ABC1234">
+                <br>
+                <input type="submit" name="submit" value="Update Balance">
+            </form>
+        </div>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

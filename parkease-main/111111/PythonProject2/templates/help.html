@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Parkeasy-help</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
+      @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+      @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
+
+      body {
+        background-color: black;
+        color: #f4b41e;
+        font: 400 16px Lato, sans-serif;
+      }
+
+      .container {
+        padding: 100px;
+      }
+
+      .faq-drawer {
+        margin-bottom: 30px;
+      }
+
+      .faq-drawer__content-wrapper {
+        font-size: 1.25em;
+        line-height: 1.4em;
+        max-height: 0px;
+        overflow: hidden;
+        transition: 0.25s ease-in-out;
+      }
+
+      .faq-drawer__title {
+        border-top: white 1px solid;
+        cursor: pointer;
+        display: block;
+        font-size: 1.25em;
+        font-weight: 700;
+        padding: 30px 0 0 0;
+        position: relative;
+        margin-bottom: 0;
+        transition: all 0.25s ease-out;
+      }
+
+      .faq-drawer__title::after {
+        border-style: solid;
+        border-width: 1px 1px 0 0;
+        content: " ";
+        display: inline-block;
+        float: right;
+        height: 10px;
+        left: 2px;
+        position: relative;
+        right: 20px;
+        top: 2px;
+        transform: rotate(135deg);
+        transition: 0.35s ease-in-out;
+        vertical-align: top;
+        width: 10px;
+      }
+
+      .faq-drawer__title:hover {
+        color: #4e4b52;
+      }
+
+      .faq-drawer__trigger:checked + .faq-drawer__title + .faq-drawer__content-wrapper {
+        max-height: 350px;
+      }
+
+      .faq-drawer__trigger:checked + .faq-drawer__title::after {
+        transform: rotate(-45deg);
+        transition: 0.25s ease-in-out;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container {
+          padding: 80px;
+        }
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: #f4b41e;
+        margin-top: 0px;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 20px;
+        padding-left: 45px;
+        letter-spacing: 5px;
+        font-size: 18px;
+        line-height: 2.42857143;
+        font-family: Montserrat, sans-serif;
+      }
+
+      .topnav a.active {
+        color: white;
+      }
+
+      footer {
+        text-align: center;
+        padding: 6px;
+        background-color: #f4b41e;
+        color: white;
+        font-size: 14px;
+        margin-bottom: 0px;
+        bottom: 0px;
+      }
+    </style>
+  </head>
+
+  <body data-offset="0" style="background-color: black" data-target=".navbar">
+    <div class="topnav">
+      <a class="active" href="homepage.php" style="font-family: Montserrat, sans-serif">parkeasy</a>
+    </div>
+
+    <div class="container">
+      <h1>Need help?</h1>
+      <div class="faq-drawer">
+        <input class="faq-drawer__trigger" id="faq-drawer" type="checkbox" />
+        <label class="faq-drawer__title" for="faq-drawer">How do I check the transaction information?</label>
+        <div class="faq-drawer__content-wrapper">
+          <div class="faq-drawer__content">
+            <p>
+              Once you login, your local wallet details will display the transactions made.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-drawer">
+        <input class="faq-drawer__trigger" id="faq-drawer-2" type="checkbox" />
+        <label class="faq-drawer__title" for="faq-drawer-2">How do I check the parking time?</label>
+        <div class="faq-drawer__content-wrapper">
+          <div class="faq-drawer__content">
+            <p>
+              On logging in, a table will display your entry time, exit time and your vehicle time—that is, the time spent in the parking lot.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-drawer">
+        <input class="faq-drawer__trigger" id="faq-drawer-3" type="checkbox" />
+        <label class="faq-drawer__title" for="faq-drawer-3">I want to check the availability of parking space.</label>
+        <div class="faq-drawer__content-wrapper">
+          <div class="faq-drawer__content">
+            <p>
+              The details will be displayed on the status page once you login.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-drawer">
+        <input class="faq-drawer__trigger" id="faq-drawer-4" type="checkbox" />
+        <label class="faq-drawer__title" for="faq-drawer-4">I have a problem regarding the local wallet transactions.</label>
+        <div class="faq-drawer__content-wrapper">
+          <div class="faq-drawer__content">
+            <p>
+              In such cases, you can reach out to us via email at Parkeasy.help@gmail.com. Our team will revert to you within 2-3 business days.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-drawer">
+        <input class="faq-drawer__trigger" id="faq-drawer-5" type="checkbox" />
+        <label class="faq-drawer__title" for="faq-drawer-5">I am having login and signup problems.</label>
+        <div class="faq-drawer__content-wrapper">
+          <div class="faq-drawer__content">
+            <p>
+              Try signing up with a different email ID. Always remember your username and password.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p style="font-size: 25px; text-align:center">CONTACT US</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Mumbai, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +911234568</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> Parkeasy3@gmail.com</p>
+    </footer>
+  </body>
+</html>

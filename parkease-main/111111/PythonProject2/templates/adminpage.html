@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle Record</title>
+
+  <!-- Bootstrap & jQuery -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Montserrat, sans-serif;
+      background-color: black;
+    }
+    td, th {
+      border-bottom: 0.5px solid #fff;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #f4b41e;
+      padding: 14px 20px;
+    }
+    .topnav a {
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      letter-spacing: 5px;
+    }
+    .topnav a:hover {
+      color: white;
+    }
+    .container .abc {
+      width: 90%;
+      padding: 10px;
+      background: black;
+      color: #f4b41e;
+      border: none;
+      border-bottom: 2px solid #fff;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f4b41e;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+  <div class="topnav">
+    <a href="{{ url_for('homepage') }}">ParkEasy</a>
+  </div>
+
+  <br><br>
+
+  <div class="container" style="width:500px;">
+    <h2 style="color:#fff; text-align:center;"><b>VEHICLE RECORD</b></h2>
+
+    <p style="color:#f4b41e; font-size:15px;">Type something in the input field to search the table for license plate or time:</p>
+    <input class="abc" id="myInput" type="text" placeholder="Search License Plate or Time...">
+
+    <br><br>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr style="color:#fff; font-size:120%;">
+            <th>License Plate</th>
+            <th>Entry Time</th>
+            <th>Exit Time</th>
+            <th>Time (Minutes)</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          {% for record in vehicle_records %}
+          <tr style="color:#f4b41e; font-size:110%;">
+            <td>{{ record.license_plate }}</td>
+            <td>{{ record.entry_time }}</td>
+            <td>{{ record.exit_time }}</td>
+            <td>{{ record.duration }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br><br>
+
+  <footer>
+    <p style="font-size:25px;">CONTACT US</p>
+    <p><span class="glyphicon glyphicon-map-marker"></span> Mumbai, India</p>
+    <p><span class="glyphicon glyphicon-phone"></span> +91 1234568</p>
+    <p><span class="glyphicon glyphicon-envelope"></span> Parkeasy3@gmail.com</p>
+  </footer>
+
+</body>
+</html>

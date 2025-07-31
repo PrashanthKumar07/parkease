@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parking History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS for styling -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f4b41e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>Parking History</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Plate Number</th>
+        <th>Date</th>
+        <th>Entry Time</th>
+        <th>Exit Time</th>
+        <th>Duration (min)</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in history %}
+      <tr>
+        <td>{{ record[0] }}</td>
+        <!-- Assuming entry_time is in format YYYY-MM-DD HH:MM:SS, extract date -->
+        <td>{{ record[1][:10] }}</td>
+        <td>{{ record[1] }}</td>
+        <td>{{ record[2] }}</td>
+        <td>{{ record[3] }}</td>
+        <td>{{ record[4] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{{ url_for('index') }}" class="btn btn-default">Back to Home</a>
+</body>
+</html>

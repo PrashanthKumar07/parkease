@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Parkeasy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap & Google Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <style>
+    /* Consistent button styling */
+    .btn-custom {
+      background-color: #f4b41e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+    }
+    .btn-custom:hover {
+      opacity: 0.8;
+    }
+    /* Basic navigation styling */
+    .navbar {
+      background-color: #f4b41e;
+      border: none;
+      margin-bottom: 0;
+    }
+    .navbar-brand, .navbar-nav li a {
+      color: #fff !important;
+    }
+    .navbar-nav li a:hover {
+      color: #f4b41e !important;
+      background-color: #0d0301 !important;
+    }
+  </style>
+</head>
+<body style="background-color:black;">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ url_for('homepage') }}">parkeasy</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="{{ url_for('history') }}">HISTORY</a></li>
+        <li><a href="{{ url_for('status_page') }}">STATUS</a></li>
+        <li><a href="{{ url_for('help_page') }}">HELP</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="jumbotron text-center">
+    <div class="hero-image" style="height:500px; width:100%;">
+      <div class="hero-text">
+        <h1><img src="{{ url_for('static', filename='images/WhatsApp Image 2025-02-27 at 09.06.06_98ac34be.jpg') }}" width="1900" height="540" alt="Parkeasy Logo"></h1>    </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div id="about" class="container-fluid" style="color:#f4b41e;">
+    <h2 style="text-align:center; font-size:40px;">ABOUT</h2>
+    <p style="font-size:19px;">
+      Parkeasy offers a smart one-stop solution for manual parking. The user is provided with a local wallet exclusively for the application. You can easily update your wallet balance once you log in to your account. As soon as your car enters the parking lot, its license plate is scanned and identified via smart ANPR (Automatic License Plate Recognition) technology. The exit time is recorded similarly. Based on these times, your total parking time is calculated and displayed on your personalized account table once you log in. Your parking time is then multiplied with our base price to generate the aggregate price, which is automatically deducted from your Parkeasy local wallet.
+      <br><br>
+      Isn't it literally Park-Easy?!
+    </p>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact_me" class="container-fluid" style="color:#f4b41e;">
+    <div style="text-align:center;">
+      <p>Contact us</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> bangalore, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 6301428164</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> ParkEasy5864@gmail.com</p>
+    </div>
+  </div>
+</body>
+</html>
